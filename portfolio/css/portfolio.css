@@ -1,4 +1,8 @@
-.h1_parent{
+
+html{
+    font-family: '나눔 고딕', NanumGothic, '돋움', Dotum, sans-serif;
+}
+header{
     background-color:#000;
     display:block;
     position:relative;
@@ -7,8 +11,11 @@
 body{
     margin:0;
 }
+
+
+
 h1{
-    font-family: '나눔 고딕', NanumGothic, '돋움', Dotum, sans-serif;
+
     font-size: 40px;
     color: #fff;
     padding: 40px;
@@ -17,4 +24,14 @@ h1{
     margin: 0 auto 0 auto;
     width:1000px;
     height: 40px;
+    padding:40px;
+}
+
+.elements{
+    margin: 0 auto 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    width:1080px;
+    font-size:16px;
+    color:#000;
 }
