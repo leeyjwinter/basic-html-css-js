@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .parent1,.parent2{
+                height: 100px;
+                width: 100px;
+                position: relative;
+                background-color: blue;
+
+                z-index:0;
+            }
+
+            .parent2{
+                z-index: 1;
+            }
+            
+            .parent1 > *{
+                height: 120px;
+                width: 120px;
+                position: relative;
+                top:30px;
+                left:30px;
+                background-color: red;
+
+                z-index: 100;
+            }
+
+            .parent2 > *{
+                height: 120px;
+                width: 120px;
+                position: relative;
+                top:30px;
+                left:30px;
+                background-color: green;
+                z-index: 10;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent1">
+            parentbox1
+            <div>childbox1</div>
+
+
+        </div>
+        <div class="parent2">
+            parentbox2
+            <div>childbox1</div>
+
+        </div>
+        
+    </body>
+</html>
