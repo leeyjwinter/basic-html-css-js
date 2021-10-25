@@ -12,26 +12,53 @@ body{
     margin:0;
 }
 
-
-
-h1{
-
+h1.startpoint{
     font-size: 40px;
     color: #fff;
     padding: 40px;
     display: block;
     background-color:pink; 
-    margin: 0 auto 0 auto;
+    /* margin: 0 auto 0 auto; */
     width:1000px;
     height: 40px;
-    padding:40px;
 }
 
-.elements{
-    margin: 0 auto 0 auto;
-    padding-left: 40px;
-    padding-right: 40px;
-    width:1080px;
+#elements{
+    /* margin: 0 auto 0 auto;
+    padding:0 40px 0 40px; */
+    width:1000px;
     font-size:16px;
     color:#000;
+    position:relative;
+    top:40px;
+}
+
+#elements span{
+    display: inline-block;
+    border: 1px solid #d1d1d1;
+    box-sizing: border-box;
+    text-align: center;
+    /* vertical-align: middle; */
+    width:324px;
+    height: 33px;
+    line-height: 33px;
+}
+
+/* #elements :nth-child(1){
+    margin-left:40px;
+} */
+
+#elements :nth-child(2):hover{
+    border:1px solid #454545;
+    font-weight: bold;
+}
+.startpoint{
+    margin: 0 auto 0 auto;
+    padding:0 80px 0 80px;
+    width:1080px;
+}
+
+h2{
+    position:relative;
+    top:70px;
 }
