@@ -26,9 +26,37 @@ header span{
     display: none;
 }
 
+body{
+    margin:0;
+}
+
 .page img{
     display:block;
-    width:100%;
+    position:relative;
+    
+    margin: 0px auto;
+}
+
+.ir_pm{display:block; overflow: hidden; font-size: 0; line-height: 0;
+text-indent: -9999px; }
+
+#first{
+    position:relative;
+    height: 750px;
+    background-color: #fff;
+    background-image: url("../image/section_invite.jpg");
+    background-repeat:no-repeat;
+    background-position: center;
+    top:-66px;
+}
+
+#second{
+    height: 822px;
+    background-color: #f9939d;
     position:relative;
     top:-66px;
+    background-image: url("../image/section_creator.jpg");
+    background-repeat:no-repeat;
+    background-position: center;
+
 }
