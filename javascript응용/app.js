@@ -8,7 +8,8 @@ const loginForm = document.querySelector("#login-form");
 //loginForm id를 가진 태그의 요소들을 가져옴
 const loginInput = loginForm.querySelector("input");
 const loginButton = loginForm.querySelector("button");
-
+const greetings = document.querySelector("h1");
+const HIDDEN_CLASSNAME = "hidden";
 
 //const loginInput = document.querySelector("#login-form input");
 //const loginButton = document.querySelector("#login-form button");과 같음
@@ -35,14 +36,6 @@ const loginButton = loginForm.querySelector("button");
 // loginButton.addEventListener("click",onLoginBtnClick);
 
 
-function onLoginSubmit(){
-    const username = loginInput.value;
-    console.log(username);
-}
-
-//submit 하면 onLoginSubmit 실행, 하지만 html에서
-//submit하면서 새로고침되므로 console.log된게 사라짐
-loginForm.addEventListener("submit",onLoginSubmit);
 
 
 //이는 jS에서 submit을 할 때 값을 전달하고 있으며 , 새로고침을 하면서 어떤 것들을
@@ -51,7 +44,24 @@ loginForm.addEventListener("submit",onLoginSubmit);
 
 function onLoginSubmitEvent(event){
     event.preventDefault();
+	const username = loginInput.value; 
     console.log(loginInput.value);
+	
+	loginForm.classList.add("hidden");
+
+//	greetings.innerText = "Hello " + username;
+	greetings.innerText = `Hello ${username}`;
+	greetings.classList.remove(HIDDEN_CLASSNAME);
+	
+	localStorage.setItem("username",username);
+
+	
 }
 loginForm.addEventListener("submit",onLoginSubmitEvent);
 
+
+const savedUsername = localStorage.getItem("username");
+
+if(savedUsername===null){
+	loginForm.classList.add("hidden");
+}
