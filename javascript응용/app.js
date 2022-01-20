@@ -45,23 +45,27 @@ const HIDDEN_CLASSNAME = "hidden";
 function onLoginSubmitEvent(event){
     event.preventDefault();
 	const username = loginInput.value; 
-    console.log(loginInput.value);
-	
+    console.log(loginInput.value);	
 	loginForm.classList.add("hidden");
-
 //	greetings.innerText = "Hello " + username;
-	greetings.innerText = `Hello ${username}`;
-	greetings.classList.remove(HIDDEN_CLASSNAME);
-	
+    paintGreetings(username);
 	localStorage.setItem("username",username);
-
-	
 }
+
+function paintGreetings(username){
+    greetings.innerText = `Hello ${username}`;
+	greetings.classList.remove(HIDDEN_CLASSNAME);
+}
+
 loginForm.addEventListener("submit",onLoginSubmitEvent);
 
 
 const savedUsername = localStorage.getItem("username");
-
-if(savedUsername===null){
-	loginForm.classList.add("hidden");
+// localStorage.removeItem("username");
+if(savedUsername!=null){
+	loginForm.classList.add(HIDDEN_CLASSNAME);
+    paintGreetings(savedUsername);
+}
+else{
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
 }
