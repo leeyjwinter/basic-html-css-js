@@ -41,3 +41,14 @@ const quotes = [
     },
  
 ];
+
+const quote = document.querySelector("#quote span:first-child");
+const author = document.querySelector("#quote span:last-child");
+
+//0~1 사이의 숫자를 랜덤으로 추출하고 소숫점 뺌
+num = Math.floor(Math.random() * quotes.length);
+const todaysQuote = quotes[num];
+console.log(todaysQuote);
+
+quote.innerText = todaysQuote.quote;
+author.innerText = todaysQuote.author;
