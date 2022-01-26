@@ -13,7 +13,7 @@ function sayHello(){
 
 
 //4초 뒤에 timeout시키며 호출
-setTimeout(sayHello,4000);
+// setTimeout(sayHello,4000);
 
 
 
