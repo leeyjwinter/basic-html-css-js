@@ -1,6 +1,7 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoList = document.getElementById("todo-list");
 const toDoInput = toDoForm.querySelector("input");
+let listCount = 1;
 
 function deleteTodo(event){
     clickedList = event.target.parentElement.innerText;
@@ -33,7 +34,8 @@ function onTodoSubmitEvent(event){
     // 폼 안의 내용 비워줌
     toDoInput.value = ""
     paintToDo(myTodo);
-    localStorage.setItem("myTodo",myTodo);
+    localStorage.setItem(`myTodo${listCount}`,myTodo);
+    listCount++;
     // newTodo =  localStorage.getItem("myTodo");
     // toDoList.innerText = newTodo;
 }
