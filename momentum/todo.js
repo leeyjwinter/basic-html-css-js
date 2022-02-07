@@ -1,7 +1,7 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoList = document.getElementById("todo-list");
 const toDoInput = toDoForm.querySelector("input");
-let listCount = 1;
+const toDos = [];
 
 function deleteTodo(event){
     clickedList = event.target.parentElement.innerText;
@@ -25,20 +25,37 @@ function paintToDo(myTodo){
     li.appendChild(button);
     toDoList.appendChild(li);
 
-}
+    // localStorage.setItem(`myTodo${listCount}`,myTodo);
+    // listCount++;
 
+}
+function saveToDos(a){
+    localStorage.setItem("todos",a);
+}
 
 function onTodoSubmitEvent(event){
     event.preventDefault();
     myTodo = toDoInput.value;
     // 폼 안의 내용 비워줌
+    toDos.push(myTodo);
+    saveToDos(toDos);
     toDoInput.value = ""
     paintToDo(myTodo);
-    localStorage.setItem(`myTodo${listCount}`,myTodo);
-    listCount++;
+
     // newTodo =  localStorage.getItem("myTodo");
     // toDoList.innerText = newTodo;
 }
 
 toDoForm.addEventListener("submit",onTodoSubmitEvent);
 
+
+for(i=0; i<toDos.length;i++){
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+    span.innerText = toDos[i];
+    const button = document.createElement("button");
+    button.innerText = "❌";
+    button.addEventListener("click", deleteTodo);
+    li.appendChild(span);
+    li.appendChild(button);
+}
