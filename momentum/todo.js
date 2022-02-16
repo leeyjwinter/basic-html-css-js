@@ -8,8 +8,9 @@ function deleteTodo(event){
     clickedList = event.target.parentElement.innerText;
     const li = event.target.parentElement;
     //toDos 리스트를 업데이트 해줌(방금 클릭된 아이디 제외한 것만 남겨두는 필터함수)
-    toDos = toDos.filter((toDo) => toDo.id !== parseint(li.id));
-    li.remove(); 
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveToDos(toDos);
+    li.remove();
 }
 
 function paintToDo(object){
@@ -65,7 +66,8 @@ if(savedToDos){
     const parsedToDos = JSON.parse(savedToDos);
     toDos = parsedToDos;
     //텍스트 값을 배열 오브젝트로 바꿔줌
-    parsedToDos.forEach(paintLocal);//parsedToDos의 각각의 요소에 대하여 함수실행하도록
+    parsedToDos.forEach(paintLocal);
+    //parsedToDos의 각각의 요소에 대하여 함수실행하도록
 
 }
 
@@ -91,11 +93,7 @@ function paintLocal(item){//paintLocal의 각각의 item들에 대해 사용한�
 //[1,2,3,4].filter(sexyFilter) 은
 //배열 요소마다 sexyFilter을 실행하고 sexyFilter(1) true가 아니면 없앰
 
-console.log(toDos);
 
-function sexyFilter(){
-
-}
 
 
 
